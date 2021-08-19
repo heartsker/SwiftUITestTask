@@ -13,11 +13,11 @@
 		A9304B7A26CD823800474620 /* TaskSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9304B7926CD823800474620 /* TaskSwitchView.swift */; };
 		A9304B7C26CD82D500474620 /* FirstTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9304B7B26CD82D500474620 /* FirstTaskView.swift */; };
 		A9304B7E26CD831100474620 /* SecondTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9304B7D26CD831100474620 /* SecondTaskView.swift */; };
-		A95C62A226CE4A65002564B5 /* Slot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C62A126CE4A65002564B5 /* Slot.swift */; };
-		A95C62A426CE4C81002564B5 /* Swiping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C62A326CE4C81002564B5 /* Swiping.swift */; };
-		A95C62A626CE4D67002564B5 /* FirstTaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C62A526CE4D67002564B5 /* FirstTaskViewCell.swift */; };
 		A95C62AB26CE608D002564B5 /* audio.ogg in Resources */ = {isa = PBXBuildFile; fileRef = A95C62AA26CE608D002564B5 /* audio.ogg */; };
 		A99C89DA26CE79D400431E81 /* audio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A99C89D926CE79D400431E81 /* audio.mp3 */; };
+		A9E5BD8D26CEB6280037000A /* SwipeCellModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5BD8C26CEB6280037000A /* SwipeCellModifier.swift */; };
+		A9E5BD9326CF03E60037000A /* SwipeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5BD9226CF03E60037000A /* SwipeCellView.swift */; };
+		A9E5BD9526CF041E0037000A /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5BD9426CF041E0037000A /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		A9304B7926CD823800474620 /* TaskSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSwitchView.swift; sourceTree = "<group>"; };
 		A9304B7B26CD82D500474620 /* FirstTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskView.swift; sourceTree = "<group>"; };
 		A9304B7D26CD831100474620 /* SecondTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTaskView.swift; sourceTree = "<group>"; };
-		A95C62A126CE4A65002564B5 /* Slot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot.swift; sourceTree = "<group>"; };
-		A95C62A326CE4C81002564B5 /* Swiping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swiping.swift; sourceTree = "<group>"; };
-		A95C62A526CE4D67002564B5 /* FirstTaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskViewCell.swift; sourceTree = "<group>"; };
 		A95C62AA26CE608D002564B5 /* audio.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.ogg; sourceTree = "<group>"; };
 		A99C89D926CE79D400431E81 /* audio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio.mp3; sourceTree = "<group>"; };
+		A9E5BD8C26CEB6280037000A /* SwipeCellModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellModifier.swift; sourceTree = "<group>"; };
+		A9E5BD9226CF03E60037000A /* SwipeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellView.swift; sourceTree = "<group>"; };
+		A9E5BD9426CF041E0037000A /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +88,10 @@
 		A95C62A026CE4A15002564B5 /* FirstTask */ = {
 			isa = PBXGroup;
 			children = (
-				A95C62A526CE4D67002564B5 /* FirstTaskViewCell.swift */,
 				A9304B7B26CD82D500474620 /* FirstTaskView.swift */,
-				A95C62A326CE4C81002564B5 /* Swiping.swift */,
-				A95C62A126CE4A65002564B5 /* Slot.swift */,
+				A9E5BD8C26CEB6280037000A /* SwipeCellModifier.swift */,
+				A9E5BD9226CF03E60037000A /* SwipeCellView.swift */,
+				A9E5BD9426CF041E0037000A /* RowView.swift */,
 			);
 			path = FirstTask;
 			sourceTree = "<group>";
@@ -177,13 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A95C62A626CE4D67002564B5 /* FirstTaskViewCell.swift in Sources */,
 				A9304B7C26CD82D500474620 /* FirstTaskView.swift in Sources */,
-				A95C62A226CE4A65002564B5 /* Slot.swift in Sources */,
-				A95C62A426CE4C81002564B5 /* Swiping.swift in Sources */,
 				A9304B6B26CD81DD00474620 /* SwiftUITestTaskApp.swift in Sources */,
+				A9E5BD8D26CEB6280037000A /* SwipeCellModifier.swift in Sources */,
+				A9E5BD9526CF041E0037000A /* RowView.swift in Sources */,
 				A9304B7E26CD831100474620 /* SecondTaskView.swift in Sources */,
 				A9304B7A26CD823800474620 /* TaskSwitchView.swift in Sources */,
+				A9E5BD9326CF03E60037000A /* SwipeCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

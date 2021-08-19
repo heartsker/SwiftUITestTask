@@ -7,84 +7,49 @@
 
 import SwiftUI
 
-struct swipableView: View {
-	let string: String
-	let slots: [Slot]
-
-	var body: some View {
-		FirstTaskCellView(string: string)
-			.frame(height: 60)
-			.padding()
-			.onSwipe(trailing: slots)
-	}
-}
-
 struct FirstTaskView: View {
+	@State var currentUserInteractionCellID: String?
 
-	let slotRedList = Slot(image: {
-			Image(systemName: "circle.lefthalf.fill")
-		}, title: {
-			Text("Red list")
-				.foregroundColor(.white)
-				.embedInAnyView()
-		}, action: {
-			print("Put in red list")
-		}, style:
-			.init(background: .red)
-	)
+	let swipeCellUgh = SwipeCellActionItem(buttonView: {
+		VStack(spacing: 2)  {
+			Image(systemName: "trash").font(.system(size: 22)).foregroundColor(.white)
+			Text("Ugh").fixedSize().font(.system(size: 12)).foregroundColor(.white)
+		}.frame(maxHeight: 80).castToAnyView()
 
-	let slotYellowList = Slot(image: {
-		Image(systemName: "circle.lefthalf.fill")
-	}, title: {
-		Text("Yellow list")
-			.foregroundColor(.black)
-			.embedInAnyView()
-	}, action: {
-		print("Put in yellow list")
-	}, style:
-		.init(background: .yellow)
-	)
+	}, backgroundColor: .blue) {
+		print("Ugh")
+	}
 
-	let slotYammyList = Slot(image: {
-		Image(systemName: "circle.lefthalf.fill")
-	}, title: {
-		Text("Yammy list")
-			.foregroundColor(.white)
-			.embedInAnyView()
-	}, action: {
-		print("Put in yammy list")
-	}, style:
-		.init(background: .blue)
-	)
+	let swipeCellWithFriends = SwipeCellActionItem(buttonView: {
+		VStack(spacing: 2)  {
+			Image(systemName: "person.2.fill").font(.system(size: 22)).foregroundColor(.white)
+			Text("With Friends").fixedSize().font(.system(size: 12)).foregroundColor(.white)
+		}.frame(maxHeight: 80).castToAnyView()
 
-	let slotFooList = Slot(image: {
-		Image(systemName: "circle.lefthalf.fill")
-	}, title: {
-		Text("Foo list")
-			.foregroundColor(.white)
-			.embedInAnyView()
-	}, action: {
-		print("Put in foo list")
-	}, style:
-		.init(background: .green)
-	)
+	}, backgroundColor: .purple, swipeOutAction: true) {
+		print("With Friends")
+	}
 
-	var items: [AnyView] {
-		let slotsForApple = [slotRedList, slotYellowList, slotFooList]
-		let slotsForBanana = [slotYellowList, slotYammyList]
-		return [
-			swipableView(string: "Apple", slots: slotsForApple).embedInAnyView(),
-			swipableView(string: "Banana", slots: slotsForBanana).embedInAnyView()
-		]
+	let swipeCellCook = SwipeCellActionItem(buttonView: {
+		VStack(spacing: 2)  {
+			Image(systemName: "flame").font(.system(size: 22)).foregroundColor(.black)
+			Text("Cook").fixedSize().font(.system(size: 12)).foregroundColor(.black)
+		}.frame(maxHeight: 80).castToAnyView()
+
+	}, backgroundColor: .pink) {
+		print("Cook")
 	}
 
 	var body: some View {
-		NavigationView {
-			List {
-				ForEach(items.indices, id: \.self) { idx in
-					self.items[idx]
-				}.listRowInsets(EdgeInsets())
-			}.navigationBarTitle("Try out different swipes")
+		GeometryReader { proxy in
+			ScrollView {
+				LazyVStack(alignment: .center, spacing: 10) {
+					RowView(availableWidth: proxy.size.width - 20, item: "Apple", slots: [swipeCellUgh, swipeCellWithFriends], currentUserInteractionCellID: $currentUserInteractionCellID)
+					RowView(availableWidth: proxy.size.width - 20, item: "Beef", slots: [swipeCellCook, swipeCellUgh, swipeCellWithFriends], currentUserInteractionCellID: $currentUserInteractionCellID)
+
+					RowView(availableWidth: proxy.size.width - 20, item: "Pasta", slots: [swipeCellCook, swipeCellWithFriends], currentUserInteractionCellID: $currentUserInteractionCellID)
+				}.animation(.default)
+			}
 		}
 	}
 }
